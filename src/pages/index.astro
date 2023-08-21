@@ -14,7 +14,7 @@ const last_posts = posts.slice(0, 3);
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Hey there 👋</div>
     <div class="text-5xl font-bold">I'm Chris McKelt</div>
-    <div class="text-3xl py-3 font-bold">Solution Architect and Engineer</div>
+    <div class="text-3xl py-3 font-bold">Principal Architect and Engineer</div>
     <div class="py-2">
       <text class="text-lg">
         A passionate technology leader with a people first approach and a proven
@@ -31,55 +31,90 @@ const last_posts = posts.slice(0, 3);
         target="_blank"
         class="btn btn-outline ml-5"
       >
-        GitHUb
+        GitHub
       </a>
     </div>
   </div>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    <div class="text-3xl w-full font-bold mb-2">Past Roles {"</>"}</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
+    title="Solution Architect"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    desc="Solution Architect advising on cloud strategy, product selection and FinOps Governance"
+    url="http://blog.mckelt.com/projects"
     badge="NEW"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
+    title="Integration Architect"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    desc="D365 Integration with Technology One ERP on Azure"
+    url="http://blog.mckelt.com/projects"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Enterprise Architect"
+    img="/post_img.webp"
+    desc="Principles and practices to align IT with the business goals for ASX Listed Mortgage Aggregator"
     url="#"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 3"
+    title="Delivery Lead"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    desc="Working with the business and IT to deliver solutions on time and budget"
     url="#"
-    badge="FOSS"
+  />
+  <HorizontalCard
+    title="DevOps Coach"
+    img="/post_img.webp"
+    desc="Improve their time to market, and make quality more than just an afterthought"
+    url="https://www.axurcio.com/offers/2021/04/01/devops"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Data Architect"
+    img="/post_img.webp"
+    desc="Data estate assessment and future platform architecture"
+    url="https://www.axurcio.com/offers/2021/01/01/data"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="FinOps Architect"
+    img="/post_img.webp"
+    desc="Guard your cloud against unexpected costs"
+    url="https://www.axurcio.com/offers/2021/01/01/finops"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Engineering Manager"
+    img="/post_img.webp"
+    desc="Managing a team of 20 people to deliver technology ranging from payment solutions, IOS/Android mobile account tools, online loans/credit cards/account opening websites, customer relationship management and desktop software to manage branch daily cash flow counting"
+    url="#"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Product Owner"
+    img="/post_img.webp"
+    desc="Portfolio of lending applications requiring modernisation to align with Royal Commission requirements"
+    url="#"
   />
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-  </div>
-
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + post.slug}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Scrum Master"
+    img="/post_img.webp"
+    desc="Scrum Master across 2 teams facilitating ceremonies and helping value delivery"
+    url="#"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Technical Lead"
+    img="/post_img.webp"
+    desc="Lead Engineer on several mission critical applications"
+    url="#"
+  />
 </BaseLayout>
