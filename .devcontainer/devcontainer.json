@@ -1,0 +1,85 @@
+{
+  "name": "Astro Blog Dev",
+  // Use a Node/TypeScript devcontainer base image (comes with node + tools)
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
+
+  // Add helpful features (Node already provided by image; pnpm feature is handy on other bases)
+  "features": {
+"ghcr.io/devcontainers/features/powershell:1": {},
+    "ghcr.io/rio/features/kustomize:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "version": "latest",
+      "tflint": "latest",
+      "terragrunt": "latest",
+      "installSentinel": "false",
+      "installTFsec": "true",
+      "installTerraformDocs": "true"
+    },
+    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+      "packages": "curl"
+    },
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/dapr/cli/dapr-cli:0": {},
+    "ghcr.io/devcontainers/features/azure-cli:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/mikaello/devcontainer-features/modern-shell-utils:1": {}
+    
+  },
+
+  // Container user to avoid root-owned node_modules
+  "remoteUser": "node",
+
+  // Forward Astro dev server (default 4321)
+  "forwardPorts": [4321],
+  "portsAttributes": {
+    "4321": {
+      "label": "Astro dev",
+      "onAutoForward": "openPreview"
+    }
+  },
+
+
+  "containerEnv": {
+    "PNPM_STORE_DIR": "/workspaces/.pnpm-store"
+  },
+
+  // Run after the container is created
+  "postCreateCommand": "corepack enable && pnpm install",
+
+  // VS Code setup
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "astro-build.astro-vscode",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "unifiedjs.vscode-mdx",
+        "yzhang.markdown-all-in-one",
+        "editorconfig.editorconfig"
+      ],
+      "settings": {
+        // Format on save w/ Prettier; Astro plugin supports formatting .astro files
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        // Tailwind & Astro niceties
+        "tailwindCSS.includeLanguages": { "plaintext": "html" },
+        "files.eol": "\n"
+      }
+    }
+  },
+
+  // Useful defaults for Node monorepos too
+  "updateContentCommand": "pnpm install",
+
+  // Recommend commands (for your reference):
+  // - Start dev server: pnpm dev --host 0.0.0.0  (so it’s reachable from host)
+  // - Build: pnpm build
+  // - Preview: pnpm preview --host 0.0.0.0
+  "postStartCommand": ""
+}
