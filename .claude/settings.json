@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"c:\\\\dev\\\\mckelt\\\\resume\" -Recurse -ErrorAction SilentlyContinue | Where-Object {$_.Name -match \"\\(Dockerfile|devcontainer\\)\" -and $_.Depth -le 2} | Select-Object FullName)",
+      "Bash(docker pull *)"
+    ]
+  }
+}
